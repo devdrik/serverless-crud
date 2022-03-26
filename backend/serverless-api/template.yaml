@@ -102,6 +102,7 @@ Resources:
         Api:
           Type: Api
           Properties:
+            RestApiId: !Ref MyApi
             Path: /{id}
             Method: GET
   # Each Lambda function is defined by properties:
@@ -130,6 +131,7 @@ Resources:
         Api:
           Type: Api
           Properties:
+            RestApiId: !Ref MyApi
             Path: /
             Method: POST
   # Simple syntax to create a DynamoDB table with a single attribute primary key, more in
@@ -146,7 +148,7 @@ Resources:
         ReadCapacityUnits: 2
         WriteCapacityUnits: 2
 
-Outputs:
-  WebEndpoint:
-    Description: "API Gateway endpoint URL for Prod stage"
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+# Outputs:
+#   WebEndpoint:
+#     Description: "API Gateway endpoint URL for Prod stage"
+#     Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
