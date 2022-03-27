@@ -22,4 +22,6 @@ aws cognito-idp initiate-auth --client-id <client-id> --auth-flow USER_PASSWORD_
 ### adding cognito sign-in to the frontend
 - cognito UI link: https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-app-integration.html
 - integrate UI with Amplify: https://docs.amplify.aws/lib/auth/getting-started/q/platform/js/
+- use Userpool created with sam: https://docs.amplify.aws/cli/auth/import/
+
 
