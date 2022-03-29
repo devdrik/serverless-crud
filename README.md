@@ -4,6 +4,29 @@ This repo holds test setups to deploy a simple more or less skeleton for an appl
 
 ## useful learings
 
+## current deployment
+### backend:
+use 
+``` 
+sam build
+sam deploy
+```
+
+### frontend:
+add amplify with
+``` 
+amplify init 
+```
+get userpool with 
+```
+http://localhost:3000
+```
+and deploy with
+```
+amplify push
+```
+
+
 ### Get an API-Token of a conginto secured API 
 Easiest with aws cli:
 
@@ -23,5 +46,6 @@ aws cognito-idp initiate-auth --client-id <client-id> --auth-flow USER_PASSWORD_
 - cognito UI link: https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-app-integration.html
 - integrate UI with Amplify: https://docs.amplify.aws/lib/auth/getting-started/q/platform/js/
 - use Userpool created with sam: https://docs.amplify.aws/cli/auth/import/
+- add userpooldomain: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooldomain.html
 
 
