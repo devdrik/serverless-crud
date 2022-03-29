@@ -19,7 +19,12 @@ Resources:
     Type: AWS::Serverless::Api
     Properties:
       StageName: Prod
-      Cors: "'*'"
+      Cors:
+        AllowMethods: "'POST, GET'"
+        AllowHeaders: "'*'"
+        AllowOrigin: "'http://localhost:3000'"
+        MaxAge: "'600'"
+        AllowCredentials: true
       Auth:
         DefaultAuthorizer: MyCognitoAuthorizer
         Authorizers:
