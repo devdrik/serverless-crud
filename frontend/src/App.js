@@ -3,10 +3,22 @@ import DummyList from './views/DummyList';
 import DummyCreator from './views/DummyCreator';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import { setAuthToken } from "./service/DummyService";
 
-const App = () => {
+import { Amplify } from 'aws-amplify';
+
+import { withAuthenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
+
+import awsExports from './aws-exports';
+
+Amplify.configure(awsExports);
+
+const App = ({user}) => {
 
   const [view, setview] = useState("list")
+
+  setAuthToken(user.signInUserSession.idToken.jwtToken)
 
   function viewSwitch(view) {
     switch (view) {
@@ -31,9 +43,13 @@ const App = () => {
         </Nav>
       </Navbar.Collapse>
     </Navbar>
-    {viewSwitch(view)}
+    {
+    // console.log(user.signInUserSession.idToken.jwtToken)
+
+    viewSwitch(view)
+    }
     </>
   );
 }
 
-export default App;
+export default withAuthenticator(App);
