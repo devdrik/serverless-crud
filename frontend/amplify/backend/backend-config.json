@@ -1,0 +1,11 @@
+{
+  "auth": {
+    "serverlesscrud18cf574d": {
+      "service": "Cognito",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}

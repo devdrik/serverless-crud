@@ -1,0 +1,15 @@
+{
+  "authSelections": "userPoolOnly",
+  "resourceName": "serverlesscrud18cf574d",
+  "serviceType": "imported",
+  "region": "eu-central-1",
+  "usernameAttributes": [
+    "email"
+  ],
+  "authProvidersUserPool": [],
+  "requiredAttributes": [],
+  "passwordPolicyMinLength": 8,
+  "passwordPolicyCharacters": [],
+  "mfaConfiguration": "OFF",
+  "mfaTypes": []
+}
