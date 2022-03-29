@@ -19,6 +19,7 @@ const App = ({user}) => {
   const [view, setview] = useState("list")
 
   setAuthToken(user.signInUserSession.idToken.jwtToken)
+  console.log(user.signInUserSession.idToken.jwtToken) 
 
   function viewSwitch(view) {
     switch (view) {
@@ -43,11 +44,7 @@ const App = ({user}) => {
         </Nav>
       </Navbar.Collapse>
     </Navbar>
-    {
-    // console.log(user.signInUserSession.idToken.jwtToken)
-
-    viewSwitch(view)
-    }
+    {viewSwitch(view)}
     </>
   );
 }
