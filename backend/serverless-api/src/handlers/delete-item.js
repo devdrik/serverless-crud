@@ -7,44 +7,34 @@ const docClient = new dynamodb.DocumentClient();
 // Get the DynamoDB table name from environment variables
 const tableName = process.env.SAMPLE_TABLE;
 
-const generateId = () => {
-    var ts = new Date().getTime(); // limit to recent
-    var randid = Math.floor(Math.random() * 512);
-    // ts = (ts * 64);   // bit-shift << 6
-    // ts = ts + shardId;
-    return "id:" + (ts * 512) + randid;
-  }
 
 /**
  * A simple example includes a HTTP post method to add one item to a DynamoDB table.
  */
-exports.putItemHandler = async (event) => {
-    if (event.httpMethod !== 'POST') {
+exports.deleteItemHandler = async (event) => {
+    if (event.httpMethod !== 'DELETE') {
         throw new Error(`postMethod only accepts POST method, you tried: ${event.httpMethod} method.`);
     }
     // All log statements are written to CloudWatch
     console.info('received:', event);
 
-    // Get id and name from the body of the request
-    const body = JSON.parse(event.body);
-    const id = generateId();
-    const name = body.name;
+      // Get id from pathParameters from APIGateway because of `/{id}` at template.yaml
+    const id = event.pathParameters.id;
 
-    // Creates a new item, or replaces an old item with a new item
-    // https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB/DocumentClient.html#put-property
+    // Get the item from the table
+    // https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB/DocumentClient.html#get-property
     var params = {
         TableName : tableName,
-        Item: { id : id, name: name }
+        Key: { id: id },
     };
 
-    const result = await docClient.put(params).promise();
+    const result = await docClient.delete(params).promise();
 
     const response = {
         statusCode: 200,
         headers: {
             "Access-Control-Allow-Origin" : "*", // Required for CORS support to work
-          },
-        body: JSON.stringify(body)
+          }
     };
 
     // All log statements are written to CloudWatch

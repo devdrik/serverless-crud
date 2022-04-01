@@ -6,6 +6,16 @@ import {
   updateDummy,
 } from "../service/DummyService";
 
+// function generateId() {
+//   var ts = new Date().getTime(); // limit to recent
+//   var randid = Math.floor(Math.random() * 512);
+//   // ts = (ts * 64);   // bit-shift << 6
+//   // ts = ts + shardId;
+//   return "id:" + (ts * 512) + randid;
+// }
+
+// console.log(generateId())
+
 const DummyList = () => {
   const [dummies, setDummies] = useState([]);
 
