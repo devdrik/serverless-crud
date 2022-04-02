@@ -36,5 +36,5 @@ export const deleteDummy = (dummy) => {
 };
 
 export const updateDummy = (dummy) => {
-  return axios.put(URL, dummy);
+  return axios.post(URL, dummy);
 };
