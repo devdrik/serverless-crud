@@ -27,7 +27,7 @@ exports.putItemHandler = async (event) => {
 
     // Get id and name from the body of the request
     const body = JSON.parse(event.body);
-    const id = generateId();
+    const id = body.id || generateId();
     const name = body.name;
 
     // Creates a new item, or replaces an old item with a new item
