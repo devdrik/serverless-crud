@@ -25,7 +25,7 @@ const App = ({user}) => {
       case "list":
         return(<DummyList></DummyList>)
       case "creator":
-        return(<DummyCreator></DummyCreator>)  
+        return(<DummyCreator setDummy={() => {}}></DummyCreator>)  
       default:
         break;
     }
