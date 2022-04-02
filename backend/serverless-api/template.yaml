@@ -20,7 +20,7 @@ Resources:
     Properties:
       StageName: Prod
       Cors:
-        AllowMethods: "'POST, GET, DELETE'"
+        AllowMethods: "'POST, GET, PUT, DELETE'"
         AllowHeaders: "'*'"
         AllowOrigin: "'*'"
         MaxAge: "'600'"
