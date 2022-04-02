@@ -19,13 +19,18 @@ amplify init
 ```
 get userpool with 
 ```
-http://localhost:3000
+amplify import auth
 ```
 and deploy with
 ```
 amplify push
 ```
 
+when the backend ist deployed entiraly new, then use
+```
+amplify remove auth
+```
+add make a new import after that
 
 ### Get an API-Token of a conginto secured API 
 Easiest with aws cli:
@@ -48,6 +53,6 @@ aws cognito-idp initiate-auth --client-id <client-id> --auth-flow USER_PASSWORD_
 - add userpooldomain: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooldomain.html
 
 ## Next Steps:
-
-- make application fully functional
-- automate build pipeline
+### automate build pipeline
+- how to use deployment as code?
+- testing?
