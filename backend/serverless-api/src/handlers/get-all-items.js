@@ -28,10 +28,10 @@ exports.getAllItemsHandler = async (event) => {
 
     const response = {
         statusCode: 200,
-        body: JSON.stringify(items),
         headers: {
             "Access-Control-Allow-Origin" : "*", // Required for CORS support to work
           },
+        body: JSON.stringify(items)
     };
 
     // All log statements are written to CloudWatch

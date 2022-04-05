@@ -3,7 +3,7 @@ version = 0.1
 [default.deploy]
 [default.deploy.parameters]
 stack_name = "serverless-crud"
-s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-48hqx1z7j25b"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1xajtfbyubyp7"
 s3_prefix = "serverless-crud"
 region = "eu-central-1"
 confirm_changeset = true

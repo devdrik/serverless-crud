@@ -1,6 +1,6 @@
 {
   "auth": {
-    "frontendc8e19e53": {
+    "serverlesscrudea638f30": {
       "service": "Cognito",
       "serviceType": "imported",
       "providerPlugin": "awscloudformation",
