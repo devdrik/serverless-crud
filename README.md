@@ -19,7 +19,7 @@ amplify init
 ```
 get userpool with 
 ```
-http://localhost:3000
+amplify import auth
 ```
 and deploy with
 ```
